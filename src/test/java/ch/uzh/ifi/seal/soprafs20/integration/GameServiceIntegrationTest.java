@@ -120,7 +120,7 @@ public class GameServiceIntegrationTest {
         gameService.submitWord(gameId,word);
         gameService.submitWord(gameId,word2);
         testGame = gameService.getExistingGame(gameId);
-        assertEquals(testGame.getCardStatus(), CardStatus.ALL_CLUES_RECEIVED);
+        assertEquals(testGame.getCardStatus(), CardStatus.AWAITING_CLUES);
     }
 
 
@@ -138,7 +138,7 @@ public class GameServiceIntegrationTest {
         gameService.submitWord(gameId,word);
         gameService.submitWord(gameId,word2);
         testGame = gameService.getExistingGame(gameId);
-        assertEquals(testGame.getCardStatus(), CardStatus.NO_VALID_CLUE_ENTERED);
+        assertEquals(testGame.getCardStatus(), CardStatus.AWAITING_CLUES);
     }
 
     @Test
