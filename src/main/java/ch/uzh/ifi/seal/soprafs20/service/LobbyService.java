@@ -152,7 +152,7 @@ public class LobbyService {
         String baseErrorMessage = "The lobby cannot have more than 7 player. Please join different lobby";
 
         //Size of lobby is limited to maximum of 7 players.
-        if(lobby.getPlayerIds().size()>7){
+        if(lobby.getPlayerIds().size()>=7){
             throw new LobbyException(baseErrorMessage);
         }
 
@@ -163,6 +163,7 @@ public class LobbyService {
         }
         lobby.getPlayerIds().add(userId);
         saveOrUpdate(lobby);
+
     }
 
     public Lobby getLobby(Long id) {
